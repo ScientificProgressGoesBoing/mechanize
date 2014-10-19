@@ -36,12 +36,12 @@ class Scraper
   def clean_title_for_filename( page )
     #clean page title from characters that cannot be part of filenames
     if not page.title == nil
-      titletext  =  page.title.gsub(/\s{2,}/," ").strip
-      titletext  =  titletext.gsub(/\t/," ").strip
-      titletext  =  titletext.gsub(/\//," - ").strip
-      titletext  =  titletext.gsub(/:/," - ").strip
-      titletext  =  titletext.gsub(/\r/," ").strip
-      titletext  =  titletext.gsub(/\n/," ").strip
+      titletext  =  page.title.gsub(/\s{2,}/,' ').strip
+      titletext  =  titletext.gsub(/\t/,'').strip
+      titletext  =  titletext.gsub(/\//,' - ').strip
+      titletext  =  titletext.gsub(/:/,' - ').strip
+      titletext  =  titletext.gsub(/\r/,' ').strip
+      titletext  =  titletext.gsub(/\n/,' ').strip
     else 
       titletext = ''
     end 
